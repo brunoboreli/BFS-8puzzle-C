@@ -62,6 +62,7 @@ int main(){
 	}
 	free(matriz_in);
 	free(pos_zero);
+	free(vector);
 
 	return 0;
 }

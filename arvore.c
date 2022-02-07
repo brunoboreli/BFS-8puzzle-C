@@ -147,7 +147,7 @@ int gerar_filhos(Folha *p, Folha *raiz,int vector[]){
 
 				if(vector[key]){
 					//verificando se o nó já contém na arvore
-						for(int i=0;i<3;i++){
+					for(int i=0;i<3;i++){
 						free(matriz_nova[i]);
 					}
 					free(matriz_nova);
@@ -159,6 +159,12 @@ int gerar_filhos(Folha *p, Folha *raiz,int vector[]){
 					nos_gerados++;
 					p->esq = aux_no;
 					(p->esq)->pai = p;
+					for(int i=0;i<3;i++){
+						free(matriz_nova[i]);
+					}
+					free(matriz_nova);
+					free(pos_zero_new);
+
 				}
 				
 			}
@@ -204,7 +210,7 @@ int gerar_filhos(Folha *p, Folha *raiz,int vector[]){
 
 				if(vector[key]){
 					//verificando se o nó já contém na arvore
-						for(int i=0;i<3;i++){
+					for(int i=0;i<3;i++){
 						free(matriz_nova[i]);
 					}
 					free(matriz_nova);
@@ -216,6 +222,11 @@ int gerar_filhos(Folha *p, Folha *raiz,int vector[]){
 					nos_gerados++;
 					p->baixo = aux_no;
 					(p->baixo)->pai = p;
+					for(int i=0;i<3;i++){
+						free(matriz_nova[i]);
+					}
+					free(matriz_nova);
+					free(pos_zero_new);
 				}
 				
 			}
@@ -273,6 +284,11 @@ int gerar_filhos(Folha *p, Folha *raiz,int vector[]){
 					nos_gerados++;
 					p->dir = aux_no;
 					(p->dir)->pai = p;
+					for(int i=0;i<3;i++){
+						free(matriz_nova[i]);
+					}
+					free(matriz_nova);
+					free(pos_zero_new);
 				}
 				
 			}
@@ -330,6 +346,11 @@ int gerar_filhos(Folha *p, Folha *raiz,int vector[]){
 					nos_gerados++;
 					p->cima = aux_no;
 					(p->cima)->pai = p;
+					for(int i=0;i<3;i++){
+						free(matriz_nova[i]);
+					}
+					free(matriz_nova);
+					free(pos_zero_new);
 				}
 
 			}
@@ -443,6 +464,7 @@ int percurso_largura(Folha *p,int vetor[]){
 		
 	}
 	
+	free(leaf);
 	fila_destruir(&f);	
 	return 0;
 }
